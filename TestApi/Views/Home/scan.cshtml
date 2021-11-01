@@ -1,0 +1,95 @@
+﻿@model IEnumerable<TestApi.Models.ScanData>
+
+@{
+    ViewData["Title"] = "scan";
+}
+
+<h1>scan</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Camid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Devid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Devmac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Devname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Devno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Operator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timelocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Camid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Devid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Devmac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Devname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Devno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timelocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ScanId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ScanId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ScanId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

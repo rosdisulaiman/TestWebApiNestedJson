@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CARAAPI", "CARAAPI\CARAAPI.csproj", "{3887D97C-774E-4045-B9E5-5B0192D6C5C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{E3121434-D980-4135-8DEC-4A7142B8C702}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{FBED2808-4EC6-4748-B25C-471ABC8C379C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerService\LoggerService.csproj", "{514129E1-CA47-46D9-8E00-4C169F183E56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{CE38C45D-A0FD-4E78-81BC-BFE0AE304375}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F3AF0857-EE5F-407E-9C20-A65044A024E0}"
+	ProjectSection(SolutionItems) = preProject
+		Patch Vocab.txt = Patch Vocab.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3887D97C-774E-4045-B9E5-5B0192D6C5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3887D97C-774E-4045-B9E5-5B0192D6C5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3887D97C-774E-4045-B9E5-5B0192D6C5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3887D97C-774E-4045-B9E5-5B0192D6C5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3121434-D980-4135-8DEC-4A7142B8C702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3121434-D980-4135-8DEC-4A7142B8C702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3121434-D980-4135-8DEC-4A7142B8C702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3121434-D980-4135-8DEC-4A7142B8C702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBED2808-4EC6-4748-B25C-471ABC8C379C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBED2808-4EC6-4748-B25C-471ABC8C379C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBED2808-4EC6-4748-B25C-471ABC8C379C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBED2808-4EC6-4748-B25C-471ABC8C379C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514129E1-CA47-46D9-8E00-4C169F183E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514129E1-CA47-46D9-8E00-4C169F183E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514129E1-CA47-46D9-8E00-4C169F183E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514129E1-CA47-46D9-8E00-4C169F183E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE38C45D-A0FD-4E78-81BC-BFE0AE304375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE38C45D-A0FD-4E78-81BC-BFE0AE304375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE38C45D-A0FD-4E78-81BC-BFE0AE304375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE38C45D-A0FD-4E78-81BC-BFE0AE304375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DA7E774-27B6-4A97-89E8-8B4A8F6D1331}
+	EndGlobalSection
+EndGlobal
