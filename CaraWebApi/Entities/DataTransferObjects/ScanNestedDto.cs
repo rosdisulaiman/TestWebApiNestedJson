@@ -15,13 +15,14 @@ namespace Entities.DataTransferObjects
         public int Id { get; set; }
         public string ScanLocation { get; set; }
         public int Time { get; set; }
-        public DateTime LoggedDate { get; set; }
+        public DateTime LoggedDate { get; set; } = DateTime.Now;
         public string Image { get; set; }
         public string name { get; set; }
         public double FaceTemperature { get; set; }
         public string TemperatureAlarm { get; set; }
         public long Timestamp { get; set; }
         public string UserId { get; set; }
+        public List<Face> Faces { get; set; }
 
     }
 }

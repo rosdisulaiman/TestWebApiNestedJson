@@ -58,7 +58,7 @@ namespace CARAAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddScanData([FromBody] ScanData scanData)
+        public IActionResult AddScanData([FromBody] ScanNestedDto scanData)
         {
             if (scanData == null)
             {
