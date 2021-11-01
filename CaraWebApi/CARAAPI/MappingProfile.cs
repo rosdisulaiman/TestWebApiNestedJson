@@ -17,11 +17,18 @@ namespace CARAAPI
                         opt => opt.MapFrom(x => string.Join(' ', x.Address, x.Country)));
 
             CreateMap<ScanData, ScanDto>();
+
+            CreateMap<ScanData, ScanNestedDto>();
+
+            //CreateMap<ScanData, ScanNestedDto>()
+            //    .IncludeMembers(dest => dest.Faces);
+            //CreateMap<Face, ScanNestedDto>(MemberList.None);
+
             CreateMap<Face, FaceDto>();
-            CreateMap<ScanForCreationDto, ScanData>();
+            CreateMap<ScanNestedDto, ScanData>();
             CreateMap<ScanDto, ScanData>();
 
-            CreateMap<ScanForCreationDto, ScanData>();
+            CreateMap<ScanNestedDto, ScanData>();
 
             CreateMap<FaceForCreationDto, Face>();
 

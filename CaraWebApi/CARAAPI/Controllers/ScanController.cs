@@ -52,7 +52,7 @@ namespace CARAAPI.Controllers
         {
             var scanData = _context.ScanData.GetScanDataById(scanId, trackChanges: false);
            
-            var scanDto = _mapper.Map<ScanDto>(scanData);
+            var scanDto = _mapper.Map<ScanNestedDto>(scanData);
             return Ok(scanDto);
 
         }
