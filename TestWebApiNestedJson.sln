@@ -11,6 +11,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{205CDA40-AB4E-4477-8CEE-83D5C7C5D735}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Expected Result test", "Expected Result test", "{22385650-F476-4184-BD96-367C3DA6682B}"
+	ProjectSection(SolutionItems) = preProject
+		TEST API.postman_collection.json = TEST API.postman_collection.json
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "TestApi\TestApi.csproj", "{99A33C15-1E33-4681-8320-2A4DCDD93468}"
 EndProject

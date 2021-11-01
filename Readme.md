@@ -1,6 +1,6 @@
 ### This app will be using SQL LITE FOR TESTING PURPOSE.
 ### The app are mean to receive a nested Json Payload every time someone enter a bulding via Frace Recognition with payload(default manufacturing format)
-### Please Refer to Postman.Json for more extensive details for POST sample. :-
+### Please Refer to Postman.Json for more extensive details for POST sample. :- (TEST API.postman_collection)
 
 {
 	Device Property = ScanDatas.cs

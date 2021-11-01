@@ -69,7 +69,7 @@ namespace TestApi.Controllers
         }
 
         // GET: api/ScanDatas/5
-        [HttpGet("/{id}")]
+        [HttpGet("Face/{id}")]
         public async Task<ActionResult<ScanData>> GetScanData(int id)
         {
 
