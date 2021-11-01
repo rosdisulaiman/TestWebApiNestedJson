@@ -11,10 +11,10 @@ namespace Entities.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -25,23 +25,23 @@ namespace Entities.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
-                    LastName = table.Column<string>(type: "TEXT", nullable: true),
-                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
-                    PasswordHash = table.Column<string>(type: "TEXT", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "TEXT", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,10 +52,10 @@ namespace Entities.Migrations
                 name: "Companies",
                 columns: table => new
                 {
-                    CompanyId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
-                    Address = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: true)
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -66,19 +66,19 @@ namespace Entities.Migrations
                 name: "ScanDatas",
                 columns: table => new
                 {
-                    ScanId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Camid = table.Column<string>(type: "TEXT", nullable: true),
-                    Devid = table.Column<string>(type: "TEXT", nullable: true),
-                    Devmac = table.Column<string>(type: "TEXT", nullable: true),
-                    Devname = table.Column<string>(type: "TEXT", nullable: true),
-                    Devno = table.Column<string>(type: "TEXT", nullable: true),
-                    Event = table.Column<string>(type: "TEXT", nullable: true),
-                    Operator = table.Column<string>(type: "TEXT", nullable: true),
-                    Time = table.Column<int>(type: "INTEGER", nullable: false),
-                    Timelocal = table.Column<int>(type: "INTEGER", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", nullable: true),
-                    LoggedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    ScanId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Camid = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Devid = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Devmac = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Devname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Devno = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Event = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Operator = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Time = table.Column<int>(type: "int", nullable: false),
+                    Timelocal = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LoggedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -89,11 +89,11 @@ namespace Entities.Migrations
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    RoleId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
-                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -110,11 +110,11 @@ namespace Entities.Migrations
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UserId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
-                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -131,10 +131,10 @@ namespace Entities.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "TEXT", nullable: false),
-                    ProviderKey = table.Column<string>(type: "TEXT", nullable: false),
-                    ProviderDisplayName = table.Column<string>(type: "TEXT", nullable: true),
-                    UserId = table.Column<string>(type: "TEXT", nullable: false)
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,8 +151,8 @@ namespace Entities.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "TEXT", nullable: false),
-                    RoleId = table.Column<string>(type: "TEXT", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -175,10 +175,10 @@ namespace Entities.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "TEXT", nullable: false),
-                    LoginProvider = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Value = table.Column<string>(type: "TEXT", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -195,12 +195,12 @@ namespace Entities.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    EmployeeId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    FirstName = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
-                    Age = table.Column<int>(type: "INTEGER", nullable: false),
-                    Position = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
-                    CompanyId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    EmployeeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Position = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -217,39 +217,39 @@ namespace Entities.Migrations
                 name: "Faces",
                 columns: table => new
                 {
-                    FaceId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QRcode = table.Column<string>(type: "TEXT", nullable: true),
-                    address = table.Column<string>(type: "TEXT", nullable: true),
-                    age = table.Column<int>(type: "INTEGER", nullable: false),
-                    attrAge = table.Column<int>(type: "INTEGER", nullable: false),
-                    attrBeauty = table.Column<int>(type: "INTEGER", nullable: false),
-                    authType = table.Column<string>(type: "TEXT", nullable: true),
-                    cardNum = table.Column<string>(type: "TEXT", nullable: true),
-                    certificateNumber = table.Column<string>(type: "TEXT", nullable: true),
-                    certificateType = table.Column<int>(type: "INTEGER", nullable: false),
-                    commonUuid = table.Column<string>(type: "TEXT", nullable: true),
-                    email = table.Column<string>(type: "TEXT", nullable: true),
-                    ethic = table.Column<string>(type: "TEXT", nullable: true),
-                    gender = table.Column<string>(type: "TEXT", nullable: true),
-                    groupId = table.Column<string>(type: "TEXT", nullable: true),
-                    image = table.Column<string>(type: "TEXT", nullable: true),
-                    irimg = table.Column<string>(type: "TEXT", nullable: true),
-                    name = table.Column<string>(type: "TEXT", nullable: true),
-                    orgimg = table.Column<string>(type: "TEXT", nullable: true),
-                    personId = table.Column<string>(type: "TEXT", nullable: true),
-                    personUuid = table.Column<string>(type: "TEXT", nullable: true),
-                    phone = table.Column<string>(type: "TEXT", nullable: true),
-                    plateId = table.Column<string>(type: "TEXT", nullable: true),
-                    similarity = table.Column<double>(type: "REAL", nullable: false),
-                    status = table.Column<string>(type: "TEXT", nullable: true),
-                    FaceTemperature = table.Column<double>(type: "REAL", nullable: false),
-                    temperatureAlarm = table.Column<string>(type: "TEXT", nullable: true),
-                    timestamp = table.Column<long>(type: "INTEGER", nullable: false),
-                    trackId = table.Column<int>(type: "INTEGER", nullable: false),
-                    userId = table.Column<string>(type: "TEXT", nullable: true),
-                    ScanId = table.Column<int>(type: "INTEGER", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    FaceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QRcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    age = table.Column<int>(type: "int", nullable: false),
+                    attrAge = table.Column<int>(type: "int", nullable: false),
+                    attrBeauty = table.Column<int>(type: "int", nullable: false),
+                    authType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cardNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    certificateNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    certificateType = table.Column<int>(type: "int", nullable: false),
+                    commonUuid = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ethic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    groupId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    irimg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    orgimg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    personId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    personUuid = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    plateId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    similarity = table.Column<double>(type: "float", nullable: false),
+                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FaceTemperature = table.Column<double>(type: "float", nullable: false),
+                    temperatureAlarm = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    timestamp = table.Column<long>(type: "bigint", nullable: false),
+                    trackId = table.Column<int>(type: "int", nullable: false),
+                    userId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ScanId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -265,22 +265,20 @@ namespace Entities.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2245c240-7f93-4a1f-9bbc-e5b4cb49d2b2", "1a075aef-0ad7-4b0b-9b92-6bcb3d0ef000", "Manager", "MANAGER" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "400f0fbd-f6bd-4226-9f9c-6f575de84ca1", "f49d5259-2dd4-4fd0-9324-bad6c344825f", "Administrator", "ADMINISTRATOR" });
-
-            migrationBuilder.InsertData(
-                table: "Companies",
-                columns: new[] { "CompanyId", "Address", "Country", "Name" },
-                values: new object[] { new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"), "Tingkat 6, Block 18, Star Central, 63000 Cyberjaya, Selangor", "Malaysia", "Cara Com Media Sdn Bhd" });
+                values: new object[,]
+                {
+                    { "f1608245-1639-49af-b9e0-41214bb4a148", "4fc1041c-1e98-4a86-b506-5863a4ab8b2b", "Manager", "MANAGER" },
+                    { "839e876d-bb29-443b-aa4d-05b5dd7fa753", "96e9cc10-3151-4e22-96b5-2be18ec60a09", "Administrator", "ADMINISTRATOR" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Companies",
                 columns: new[] { "CompanyId", "Address", "Country", "Name" },
-                values: new object[] { new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"), "Tingkat 5, Block 18, Star Central, 63000 Cyberjaya, Selangor", "Malaysia", "Todak Game" });
+                values: new object[,]
+                {
+                    { new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"), "Tingkat 6, Block 18, Star Central, 63000 Cyberjaya, Selangor", "Malaysia", "Cara Com Media Sdn Bhd" },
+                    { new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"), "Tingkat 5, Block 18, Star Central, 63000 Cyberjaya, Selangor", "Malaysia", "Todak Game" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Employees",
@@ -306,7 +304,8 @@ namespace Entities.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true);
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -332,7 +331,8 @@ namespace Entities.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true);
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_CompanyId",

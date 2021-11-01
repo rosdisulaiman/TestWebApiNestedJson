@@ -14,5 +14,8 @@ namespace Entities.DataTransferObjects
         public string ScanLocation { get; set; }
         public int Time { get; set; }
         public DateTime LoggedDate { get; set; }
+
+        public string FaceTemprecure { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -52,13 +52,13 @@ namespace CARAAPI.Controllers
         {
             var scanData = await _context.ScanData.GetScanAsync(scanId, trackChanges: false);
            
-            var scanDto = _mapper.Map<ScanNestedDto>(scanData);
+            var scanDto = _mapper.Map<ScanDto>(scanData);
             return Ok(scanData);
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddScanData([FromBody] ScanData scanData)
+        public async Task<IActionResult> AddScanData([FromBody] ScanForCreationDto scanData)
         {
             if (scanData == null)
             {
@@ -68,7 +68,7 @@ namespace CARAAPI.Controllers
             var scanDataEntity = _mapper.Map<ScanData>(scanData); 
             
             _context.ScanData.AddScanData(scanDataEntity);
-            _context.SaveAsync(); 
+            await _context.SaveAsync(); 
             
             var scanToReturn = _mapper.Map<ScanDto>(scanDataEntity); 
             
