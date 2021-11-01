@@ -29,8 +29,8 @@ namespace TestApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(o => o.UseSqlite("Data source=Db\api.db"));
-            services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
+            services.AddDbContext<AppDbContext>(o => o.UseSqlite("Data source=app.db"));
+            //services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
 
 
             ////DOTNET 6 Fixing the error “A possible object cycle was detected” in different versions of ASP.NET Core

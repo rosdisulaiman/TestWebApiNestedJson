@@ -50,8 +50,7 @@ namespace CARAAPI.Extensions
         public static void ConfigureSqlContext(this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<RepositoryContext>(opts =>
-            opts.UseSqlServer(configuration.GetConnectionString("DefaultConn")));
+            services.AddDbContext<RepositoryContext>(o => o.UseSqlite("Data source=app.db"));
             //services.AddDbContext<RepositoryContext>(opts =>
             //opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
             //, b => b.MigrationsAssembly("CARAAPI")));
