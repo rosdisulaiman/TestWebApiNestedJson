@@ -19,7 +19,9 @@ namespace TestApi.Services
 
         public async Task<ScanData> AddScData(ScanData scanData)
         {
+
             var result = await _appDbContext.ScanDatas.AddAsync(scanData);
+            
             await _appDbContext.SaveChangesAsync();
 
             return result.Entity;
@@ -50,24 +52,6 @@ namespace TestApi.Services
                 .Include(e => e.Faces)
                 //       .ThenInclude(e => e.skill) method to add more data from other table as many as needed
                 .FirstOrDefaultAsync(e => e.ScanId == scanDataId);
-        }
-
-        public async Task<IEnumerable<ScanData>> Search(string name, string devno)
-        {
-            IQueryable<ScanData> query = _appDbContext.ScanDatas;
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                query = query.Where(e => e.Devname.Contains(name)
-                            || e.Devno.Contains(devno));
-            }
-
-            if (devno != null)
-            {
-                query = query.Where(e => e.Devname == devno);
-            }
-
-            return await query.ToListAsync();
         }
     }
 }

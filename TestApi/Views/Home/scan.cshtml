@@ -13,37 +13,35 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Camid)
+                @Html.DisplayNameFor(model => model.camid)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Devid)
+                @Html.DisplayNameFor(model => model.devid)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Devmac)
+                @Html.DisplayNameFor(model => model.devmac)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Devname)
+                @Html.DisplayNameFor(model => model.devname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Devno)
+                @Html.DisplayNameFor(model => model.devno)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Operator)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Time)
+                @Html.DisplayNameFor(model => model.time)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Timelocal)
+                @Html.DisplayNameFor(model => model.timelocal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                @Html.DisplayNameFor(model => model.type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PublishedDate)
+                @Html.DisplayNameFor(model => model.LoggedTime)
             </th>
             <th></th>
         </tr>
@@ -52,37 +50,35 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Camid)
+                @Html.DisplayFor(modelItem => item.camid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Devid)
+                @Html.DisplayFor(modelItem => item.devid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Devmac)
+                @Html.DisplayFor(modelItem => item.devmac)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Devname)
+                @Html.DisplayFor(modelItem => item.devname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Devno)
+                @Html.DisplayFor(modelItem => item.devno)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Operator)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Time)
+                @Html.DisplayFor(modelItem => item.time)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Timelocal)
+                @Html.DisplayFor(modelItem => item.timelocal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PublishedDate)
+                @Html.DisplayFor(modelItem => item.LoggedTime)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ScanId">Edit</a> |
