@@ -35,9 +35,9 @@ namespace CARAAPI.Controllers
         }
 
         [HttpGet] 
-        public IActionResult GetScansData() 
+        public async Task<IActionResult> GetScansData() 
         { 
-                var scanData = _context.ScanData.GetAllScannedData(trackChanges: false);
+                var scanData = await _context.ScanData.GetAllScanAsync(trackChanges: false);
                 //var scanDTO1 = scanData.Select(d => new ScanDto 
                 //{
                     
@@ -48,17 +48,21 @@ namespace CARAAPI.Controllers
         }
 
         [HttpGet("{id}", Name = "ScanById")]
-        public IActionResult GetScanDataById(int scanId)
+        public async Task<IActionResult> GetScanDataById(int scanId)
         {
-            var scanData = _context.ScanData.GetScanDataById(scanId, trackChanges: false);
+            var scanData = await _context.ScanData.GetScanAsync(scanId, trackChanges: false);
            
-            var scanDto = _mapper.Map<ScanNestedDto>(scanData);
-            return Ok(scanDto);
+            var scanDto = _mapper.Map<ScanDto>(scanData);
+            return Ok(scanData);
 
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public IActionResult AddScanData([FromBody] ScanNestedDto scanData)
+=======
+        public async Task<IActionResult> AddScanData([FromBody] ScanForCreationDto scanData)
+>>>>>>> Async
         {
             if (scanData == null)
             {
@@ -68,13 +72,28 @@ namespace CARAAPI.Controllers
             var scanDataEntity = _mapper.Map<ScanData>(scanData); 
             
             _context.ScanData.AddScanData(scanDataEntity);
-            _context.Save(); 
+            await _context.SaveAsync(); 
             
             var scanToReturn = _mapper.Map<ScanDto>(scanDataEntity); 
             
             return CreatedAtRoute("ScanById", new { id = scanToReturn.Id }, scanToReturn);
+        }
 
+        [HttpDelete("{id}")] 
+        public async Task<IActionResult> DeleteScan(int id) 
+        { 
+            var company = await _context.ScanData.GetScanAsync(id, trackChanges: false); 
+            if (company == null) 
+            { 
+                _logger.LogInfo($"ScanData with id: {id} doesn't exist in the database."); 
+                return NotFound(); 
 
+            } 
+            
+            _context.ScanData.DeleteScanData(company); 
+            await _context.SaveAsync();
+            
+            return NoContent(); 
         }
     }
 }

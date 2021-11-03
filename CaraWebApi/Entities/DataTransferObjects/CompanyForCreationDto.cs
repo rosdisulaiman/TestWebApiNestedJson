@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities.DataTransferObjects
 {
-    public class CompanyForCreationDto : CompanyForManipulationDto
+    public class CompanyForCreationDto
     {
-        //public IEnumerable<CompanyForCreationDto> Employees { get; set; }
+      
     }
 }

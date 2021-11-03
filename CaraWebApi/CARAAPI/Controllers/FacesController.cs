@@ -25,38 +25,6 @@ namespace CARAAPI.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetFaceOfScan(int scanId) 
-        { 
-            var scanData = _repository.ScanData.GetScanDataById(scanId, trackChanges: false); 
-            if (scanData == null) 
-            { 
-                _logger.LogInfo($"Company with id: {scanId} doesn't exist in the database."); 
-                return NotFound(); 
-            } 
-            var facecFromDb = _repository.FaceData.GetFaces(scanId, trackChanges: false);
-            var faceDto = _mapper.Map<IEnumerable<FaceDto>>(facecFromDb); 
-            
-            return Ok(faceDto); 
-        }
-
-        [HttpGet("{id}")] 
-        public IActionResult GetFaceGetFaceById(int scanId, int id)
-        { 
-            var scandata = _repository.ScanData.GetScanDataById(scanId, trackChanges: false); 
-            if (scandata == null) 
-            { 
-                _logger.LogInfo($"scandata with id: {scanId} doesn't exist in the database.");
-                return NotFound(); 
-            } 
-            var facecFromDb = _repository.FaceData.GetFaceById(scanId, id, trackChanges: false); 
-            if (facecFromDb == null) 
-            { 
-                _logger.LogInfo($"scandata with id: {id} doesn't exist in the database."); 
-                return NotFound(); 
-            } 
-            var face = _mapper.Map<EmployeeDto>(facecFromDb); 
-            return Ok(face); 
-        }
+       
     }
 }
