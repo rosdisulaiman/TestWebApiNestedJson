@@ -34,10 +34,10 @@ namespace CARAAPI
             //                 opt => opt.MapFrom(s => Mapper.Map<DomainClass, Child>(s)));
 
             CreateMap<Face, FaceDto>();
-            CreateMap<ScanForCreationDto, ScanData>();
+            CreateMap<ScanNestedDto, ScanData>();
             CreateMap<ScanDto, ScanData>();
 
-            CreateMap<ScanForCreationDto, ScanData>();
+            CreateMap<ScanNestedDto, ScanData>();
 
             CreateMap<FaceForCreationDto, Face>();
 
