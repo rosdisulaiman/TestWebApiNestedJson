@@ -25,6 +25,6 @@ namespace Contracts
         /// Synchronous Method
         /// </summary>
         ///
-        void Save();
+        //void Save();
     }
 }

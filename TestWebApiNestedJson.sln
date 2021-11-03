@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "README-SolutionItems", "README-SolutionItems", "{F3724E6C-30A3-42F8-83FD-89F723629808}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.md = Readme.md
+		scan.json = scan.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{205CDA40-AB4E-4477-8CEE-83D5C7C5D735}"
