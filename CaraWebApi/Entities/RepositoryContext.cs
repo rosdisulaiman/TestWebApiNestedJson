@@ -32,8 +32,7 @@ namespace Entities
 
         public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<ScanData> ScanDatas { get; set; }
-        public DbSet<Face> Faces { get; set; }
+
     }
 
 }

@@ -10,8 +10,6 @@ namespace Contracts
     {
         ICompanyRepository Company { get; }
         IEmployeeRepository Employee { get; }
-        IScanRepository ScanData { get; }
-        IFaceRepository FaceData { get; }
 
         /// <summary>
         /// ASynchronous Method

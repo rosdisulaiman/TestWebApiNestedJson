@@ -16,33 +16,6 @@ namespace CARAAPI
                     .ForMember(c => c.FullAddress,
                         opt => opt.MapFrom(x => string.Join(' ', x.Address, x.Country)));
 
-            CreateMap<ScanData, ScanDto>()
-                .IncludeMembers( c => c.Faces);
-            CreateMap<Face, ScanDto>(MemberList.None);
-
-            CreateMap<ScanData, ScanForCreationDto>();
-
-            //CreateMap<ScanData, ScanNestedDto>()
-            //    .IncludeMembers(dest => dest.Faces);
-            //CreateMap<Face, ScanNestedDto>(MemberList.None);
-            
-            //Mapper.CreateMap<DomainClass, Child>();
-            //Mapper.CreateMap<DomainClass, Parent>()
-            //      .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
-            //      .ForMember(d => d.A, opt => opt.MapFrom(s => s.A))
-            //      .ForMember(d => d.Child,
-            //                 opt => opt.MapFrom(s => Mapper.Map<DomainClass, Child>(s)));
-
-            CreateMap<Face, FaceDto>();
-            CreateMap<ScanNestedDto, ScanData>();
-            CreateMap<ScanDto, ScanData>();
-
-            CreateMap<ScanNestedDto, ScanData>();
-
-            CreateMap<FaceForCreationDto, Face>();
-
-           
-
             CreateMap<Employee, EmployeeDto>();
 
             CreateMap<CompanyForCreationDto, Company>();
