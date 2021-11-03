@@ -30,6 +30,7 @@ namespace TestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(o => o.UseSqlite("Data source=app.db"));
+            services.AddAutoMapper(typeof(Startup));
             //services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
 
 

@@ -8,7 +8,6 @@ namespace TestApi.Services
 {
     public interface IScanRepository
     {
-        Task<IEnumerable<ScanData>> Search(string name, string devno);
         Task<IEnumerable<ScanData>> GetAllSc();
         Task<ScanData> GetScById(int scanDataId);
         Task<ScanData> AddScData(ScanData scanData);
