@@ -14,7 +14,6 @@ namespace TestApi.Profiles
         public MappingProfile()
         {
             CreateMap<string, DateTime>().ConvertUsing<DateTimeTypeConverter>();
-
             CreateMap<ScanData, ScanDataDTO>()
                 .ForMember(c => c.ScanLocation,
                         opt => opt.MapFrom(x => string.Join(' ', x.devid, x.devname)))
